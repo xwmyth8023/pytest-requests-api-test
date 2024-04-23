@@ -1,0 +1,20 @@
+- name: "Request Body is blank"
+  request:
+    method: "POST"
+    url: "https://httpbin.org/post"
+    json: {}
+  assert:
+    - eq: {args: {}}
+
+- name: "Params is not blank"
+  request:
+    method: "POST"
+    url: "https://httpbin.org/post"
+    json: {a: a}
+  assert:
+    - eq: {data: '{"a": "a"}'}
+    - eq: {json: {a: 'a'}}
+
+
+
+

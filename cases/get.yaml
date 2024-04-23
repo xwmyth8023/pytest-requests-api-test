@@ -1,0 +1,20 @@
+- name: "Params is blank"
+  request:
+    method: "GET"
+    url: "https://httpbin.org/get"
+    params:
+  assert:
+    - eq: {args: {}}
+
+- name: "Params is not blank"
+  request:
+    method: "GET"
+    url: "https://httpbin.org/get"
+    params:
+      a: "a"
+  assert:
+    - eq: {args: {"a":"a"}}
+
+
+
+

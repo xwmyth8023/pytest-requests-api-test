@@ -1,0 +1,4 @@
+.venv
+allure-results
+logs
+__pycache__
